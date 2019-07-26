@@ -25,8 +25,6 @@
 #include <utils/Singleton.h>
 #include <utils/String8.h>
 
-#include <gui/GraphicsEnv.h>
-
 #include <EGL/egl.h>
 
 // ----------------------------------------------------------------------------
@@ -55,10 +53,7 @@ class Loader : public Singleton<Loader>
     };
     
     getProcAddressType getProcAddress;
-
-    void* mLibGui;
-    decltype(android_getDriverNamespace)* mGetDriverNamespace;
-
+    
 public:
     ~Loader();
     
