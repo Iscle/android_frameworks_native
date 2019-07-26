@@ -22,7 +22,6 @@
 #include <new>
 #include <malloc.h>
 #include <sys/prctl.h>
-#include <cutils/properties.h>
 
 #include <android/dlext.h>
 #include <cutils/properties.h>
@@ -190,13 +189,6 @@ bool Hal::Open() {
 
     int result;
     const hwvulkan_module_t* module = nullptr;
-
-    // Use stub HAL if vulkan is disabled
-    bool disableVulkan = property_get_bool("persist.graphics.vulkan.disable", false);
-    if (disableVulkan == true) {
-        ALOGI("no Vulkan HAL present, using stub HAL");
-        return true;
-    }
 
     result = LoadUpdatedDriver(reinterpret_cast<const hw_module_t**>(&module));
     if (result == -ENOENT) {
