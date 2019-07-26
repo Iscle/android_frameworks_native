@@ -46,7 +46,10 @@ LOCAL_SRC_FILES := \
 	PixelFormat.cpp \
 	Rect.cpp \
 	Region.cpp \
-	UiConfig.cpp
+	UiConfig.cpp \
+	mediatek/Fence.cpp \
+	mediatek/IDumpTunnel.cpp \
+	mediatek/RefBaseDump.cpp
 
 LOCAL_SHARED_LIBRARIES := \
 	libbinder \
