@@ -15,7 +15,6 @@
  */
 
 #define __STDC_LIMIT_MACROS 1
-#define ATRACE_TAG ATRACE_TAG_GRAPHICS
 
 #include <string.h>
 
@@ -27,7 +26,6 @@
 #include "egl_tls.h"
 #include "Loader.h"
 #include <cutils/properties.h>
-#include <utils/Trace.h>
 
 // ----------------------------------------------------------------------------
 namespace android {
@@ -105,7 +103,6 @@ EGLDisplay egl_display_t::getFromNativeDisplay(EGLNativeDisplayType disp) {
 EGLDisplay egl_display_t::getDisplay(EGLNativeDisplayType display) {
 
     Mutex::Autolock _l(lock);
-    ATRACE_CALL();
 
     // get our driver loader
     Loader& loader(Loader::getInstance());
