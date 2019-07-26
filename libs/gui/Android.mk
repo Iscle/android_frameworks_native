@@ -76,7 +76,6 @@ LOCAL_SRC_FILES := \
 	SyncFeatures.cpp \
 
 LOCAL_SHARED_LIBRARIES := \
- 	libnativeloader \
 	libbinder \
 	libcutils \
 	libEGL \
